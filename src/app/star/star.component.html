@@ -1,0 +1,13 @@
+<div class="content">
+  <div
+    class="star"
+    *ngFor="let item of star"
+    [ngStyle]="{
+      'width.px': item.width,
+      'height.px': item.width,
+      'left.px': '-' + item.left,
+      'top.px': item.h,
+      'animationDelay.s': item.s
+    }"
+  ></div>
+</div>
