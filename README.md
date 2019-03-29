@@ -1,5 +1,11 @@
 # Angular0328
 
+# angular Project
+
+#0329 
+add  new function  input filed add place one by one ;
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
 
 ## Development server
