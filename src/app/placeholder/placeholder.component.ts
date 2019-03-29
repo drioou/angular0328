@@ -13,20 +13,17 @@ export class PlaceholderComponent implements OnInit {
   place = '';
   writePlaceholder(text, i, e): void {
     if (i < text.length) {
-      this.placeholder[e].attributes.placeholder.value = text.substring(
-        0,
-        i + 1
-      );
+      this.placeholder[e].attributes.placeholder.value += text[i];
       i++;
-      // console.log(this.placeholder[i].attributes.placeholder.value);
       setTimeout(() => {
         this.writePlaceholder(text, i, e);
       }, 50);
     }
   }
-  constructor() {}
-  ngOnInit() {
+  constructor() {
     this.placeholder = document.getElementsByTagName('input');
+  }
+  ngOnInit() {
     Object.keys(this.placeholder).forEach(e => {
       var value = this.placeholder[e].attributes.placeholder.value;
       this.placeholder[e].attributes.placeholder.value = '';
