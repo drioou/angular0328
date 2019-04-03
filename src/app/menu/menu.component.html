@@ -1,0 +1,8 @@
+<h5>目录</h5>
+<ul>
+  <li *ngFor="let i of data; let n = index">
+    <span>{{ n + 1 }}</span
+    >、
+    <a [routerLink]="['/' + i.path]">{{ i.data.title }}</a>
+  </li>
+</ul>

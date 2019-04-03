@@ -1,0 +1,87 @@
+.content {
+  min-height: 500vh;
+  background: rgb(139, 201, 228);
+  animation: body 1s;
+  .progress {
+    height: 3px;
+    width: 0;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    animation-name: progress;
+    animation-duration: 1s;
+  }
+  .cube-warp {
+    --size: 30vmin;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    perspective: 100vmin;
+    .cube {
+      transform-style: preserve-3d;
+      transform: rotateX(0deg) rotateZ(45deg) rotateY(-45deg);
+      animation-name: cube;
+      animation-duration: 1s;
+    }
+    .side {
+      position: absolute;
+      width: var(--size);
+      height: var(--size);
+      background-color: #eee;
+      top: calc(var(--size) * -0.5);
+      left: calc(var(--size) * -0.5);
+    }
+    .top {
+      background: #fff;
+      transform: rotateX(90deg) translateZ(calc(var(--size) * 0.5));
+    }
+    .front {
+      background: #999;
+      transform: translateZ(calc(var(--size) * 0.5));
+    }
+    .left {
+      background: #eee;
+      transform: rotateY(90deg) translateZ(calc(var(--size) * 0.5));
+    }
+    .rigth {
+      background: #eee;
+      transform: rotateY(90deg) translateZ(calc(var(--size) * -0.5));
+    }
+    .bottom {
+      background: #bbb;
+      transform: rotateX(90deg) translateZ(calc(var(--size) * -0.5));
+    }
+  }
+}
+.width {
+  // width: var(--scroll);
+  position: fixed;
+  top: 0;
+  font-size: calc(var(--scroll) * 100);
+  z-index: 100;
+}
+@keyframes body {
+  to {
+    background: rgb(19, 48, 97);
+  }
+}
+@keyframes progress {
+  to {
+    background: rgb(20, 255, 226);
+    width: 100%;
+  }
+}
+@keyframes cube {
+  to {
+    transform: rotateX(360deg) rotateZ(45deg) rotateY(-45deg);
+  }
+}
+:host div {
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}

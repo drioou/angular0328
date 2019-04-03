@@ -9,6 +9,11 @@ import { StarComponent } from './star/star.component';
 import { PlaceholderComponent } from './placeholder/placeholder.component';
 import { BaidumapsComponent } from './baidumaps/baidumaps.component';
 import { MapsComponent } from './maps/maps.component';
+import { RangeSliderComponent } from './range-slider/range-slider.component';
+import { MenuComponent } from './menu/menu.component';
+import { SpiralingComponent } from './spiraling/spiraling.component';
+import { SvsArrowComponent } from './svs-arrow/svs-arrow.component';
+import { CubeAnimationComponent } from './cube-animation/cube-animation.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +22,12 @@ import { MapsComponent } from './maps/maps.component';
     StarComponent,
     PlaceholderComponent,
     BaidumapsComponent,
-    MapsComponent
+    MapsComponent,
+    RangeSliderComponent,
+    MenuComponent,
+    SpiralingComponent,
+    SvsArrowComponent,
+    CubeAnimationComponent
   ],
   imports: [
     BrowserModule,
